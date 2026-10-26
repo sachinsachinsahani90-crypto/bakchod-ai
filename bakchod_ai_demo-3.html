@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b14">
+<title>Bakchod AI — Study hard, bakchodi harder</title>
+<style>
+:root{--bg:#080b14;--panel:#101626;--line:#232c43;--text:#eef2ff;--muted:#9aa6c2;--blue:#6d8cff;--purple:#a66bff;--green:#77f0c0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#1b1740 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.side{border-right:1px solid var(--line);padding:22px 16px;background:#090d18d9}.brand{display:flex;gap:11px;align-items:center;font-size:19px;font-weight:850;letter-spacing:-.6px}.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;font-size:21px;box-shadow:0 5px 24px #806dff55}.tag{font-size:11px;color:var(--muted);margin:5px 0 26px 49px}.new{width:100%;padding:12px;border:1px solid #3a4564;border-radius:12px;background:#151d30;color:var(--text);font-weight:700;cursor:pointer}.side-label{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin:26px 8px 12px}.mode{padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center;cursor:pointer;border:1px solid transparent;margin-bottom:6px}.mode.active{background:#202744;border-color:#3a4772}.mode small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.side-foot{position:absolute;bottom:18px;color:var(--muted);font-size:11px;max-width:210px;line-height:1.5}
+main{display:flex;flex-direction:column;min-height:100vh;max-width:1000px;width:100%;margin:auto;padding:0 28px}.top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0d;font-size:13px;color:var(--muted)}.status{display:flex;gap:8px;align-items:center}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}.pill{border:1px solid var(--line);border-radius:99px;padding:7px 11px}.content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:34px 0 20px}.hero{text-align:center;margin:auto auto 24px;max-width:650px}.hero-icon{font-size:38px;margin-bottom:10px}.hero h1{font-size:clamp(32px,5vw,51px);letter-spacing:-2px;margin:0 0 10px}.gradient{background:linear-gradient(90deg,#7ea0ff,#c18aff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);margin:0;line-height:1.65}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;max-width:650px;margin:0 auto 20px}.card{border:1px solid var(--line);background:#111827b8;border-radius:15px;padding:16px;text-align:left;color:var(--text);cursor:pointer;transition:.2s}.card:hover{border-color:#737ff4;transform:translateY(-2px)}.card b{display:block;margin:7px 0 4px}.card span{font-size:22px}.card small{color:var(--muted);line-height:1.4}.chat{width:100%;max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:14px;padding:12px 0}.msg{display:flex;gap:10px;align-items:flex-start}.avatar{flex:0 0 32px;height:32px;border-radius:11px;background:#222c49;display:grid;place-items:center}.bubble{background:#121a2b;border:1px solid var(--line);padding:12px 15px;border-radius:4px 14px 14px 14px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}.msg.user{flex-direction:row-reverse}.msg.user .bubble{background:#25244a;border-color:#454178;border-radius:14px 4px 14px 14px}.composer-wrap{padding:15px 0 10px;background:linear-gradient(transparent,var(--bg) 18%)}.composer{max-width:720px;margin:auto;border:1px solid #343d5b;background:#111727;border-radius:17px;padding:10px;box-shadow:0 10px 40px #0004}.composer textarea{width:100%;resize:none;min-height:48px;max-height:140px;border:0;outline:0;background:transparent;color:var(--text);font:inherit;padding:8px}.compose-bottom{display:flex;justify-content:space-between;align-items:center;padding:4px 3px 1px 8px;color:var(--muted);font-size:11px}.send{border:0;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--purple));color:white;padding:10px 15px;font-weight:800;cursor:pointer}.send:disabled{opacity:.45}.disclaimer{text-align:center;color:#74809b;font-size:10px;padding:8px 0 14px}.hidden{display:none!important}
+@media(max-width:700px){.app{grid-template-columns:1fr}.side{display:none}main{padding:0 15px}.top{height:58px}.content{padding-top:28px}.hero h1{letter-spacing:-1.3px}.cards{gap:9px}.card{padding:12px}.pill{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="logo">⚡</div><div>Bakchod AI</div></div>
+  <div class="tag">Study hard, bakchodi harder.</div>
+  <button class="new" id="newChat">＋ &nbsp; New chat</button>
+  <div class="side-label">Choose your vibe</div>
+  <div class="mode active" data-mode="smart"><span>🤖</span><div>Smart Mode<small>Ask anything</small></div></div>
+  <div class="mode" data-mode="study"><span>📚</span><div>Study Mode<small>Learn step by step</small></div></div>
+  <div class="mode" data-mode="fun"><span>😂</span><div>Bakchodi Mode<small>Jokes, roasts & riddles</small></div></div>
+  <div class="side-foot">Demo version · Replies are built-in examples. Connect an AI service to enable real AI answers.</div>
+</aside>
+<main>
+  <div class="top"><span>⚡ &nbsp; Your AI sidekick</span><span class="status"><i class="dot"></i> Demo ready <span class="pill" id="modePill">Smart Mode</span></span></div>
+  <section class="content">
+    <div class="hero" id="hero"><div class="hero-icon">🪄</div><h1>Yo, what's up <span class="gradient">legend?</span></h1><p>Homework ho ya bakchodi — let's figure it out together.<br>Choose a vibe or type your first message below.</p></div>
+    <div class="cards" id="cards">
+      <button class="card" data-prompt="Explain photosynthesis in simple words"><span>📚</span><b>Explain a topic</b><small>Make a difficult concept easy</small></button>
+      <button class="card" data-prompt="Give me 5 fun general knowledge quiz questions"><span>🧠</span><b>Quiz me</b><small>Test your brain, no pressure</small></button>
+      <button class="card" data-prompt="Tell me a clean Hinglish joke"><span>😂</span><b>Make me laugh</b><small>Time for some harmless fun</small></button>
+      <button class="card" data-prompt="Teach me Python from the very beginning"><span>💻</span><b>Learn coding</b><small>Start from absolute zero</small></button>
+    </div>
+    <div class="chat hidden" id="chat"></div>
+  </section>
+  <div class="composer-wrap"><div class="composer"><textarea id="input" placeholder="Message Bakchod AI… (try Hinglish 😎)" rows="2"></textarea><div class="compose-bottom"><span>Enter to send · Shift + Enter for new line</span><button class="send" id="send">Send ↗</button></div></div><div class="disclaimer">Demo only — don’t enter passwords or private information.</div></div>
+</main>
+</div>
+<script>
+let mode='smart'; const chat=document.querySelector('#chat'), hero=document.querySelector('#hero'), cards=document.querySelector('#cards'), input=document.querySelector('#input'), send=document.querySelector('#send');
+const modeNames={smart:'Smart Mode',study:'Study Mode',fun:'Bakchodi Mode'};
+document.querySelectorAll('.mode').forEach(el=>el.addEventListener('click',()=>{document.querySelectorAll('.mode').forEach(m=>m.classList.remove('active'));el.classList.add('active');mode=el.dataset.mode;document.querySelector('#modePill').textContent=modeNames[mode];input.placeholder=mode==='study'?'Ask a study question…':mode==='fun'?'Bol bhai, kya bakchodi karein? 😂':'Message Bakchod AI… (try Hinglish 😎)'}));
+function addMsg(text,who){const row=document.createElement('div');row.className='msg '+who;const avatar=document.createElement('div');avatar.className='avatar';avatar.textContent=who==='user'?'😎':'⚡';const bubble=document.createElement('div');bubble.className='bubble';bubble.textContent=text;row.append(avatar,bubble);chat.append(row);chat.scrollTop=chat.scrollHeight;return bubble}
+function replyFor(s){let t=s.toLowerCase();if(mode==='fun'||/joke|roast|bakchodi|funny|laugh/.test(t))return 'Bhai 😂 main abhi demo mode mein hoon, isliye asli AI ki jagah sample replies deta hoon. Ek joke: Teacher: “Late kyun aaye?” Student: “Sir, sapne mein future dekh raha tha… alarm past mein baj gaya.” 💀';if(mode==='study'||/explain|photosynthesis|homework|study|math|science|python|coding|quiz/.test(t))return '📚 Chalo step by step karte hain!\n\nYe website abhi demo mode mein hai, isliye main real AI answers generate nahi kar sakta. Real AI enable karne ke liye secure backend aur AI API connection add karna hoga. Tab main tumhare question ka proper answer de sakunga.';return 'Yo bhai! 😎 Message mil gaya.\n\nMain abhi demo version hoon — replies sample hain, real AI connected nahi hai. Next step mein hum secure AI backend connect kar sakte hain, taaki proper smart answers milen.'}
+function submit(text=input.value.trim()){if(!text)return;hero.classList.add('hidden');cards.classList.add('hidden');chat.classList.remove('hidden');addMsg(text,'user');input.value='';input.style.height='48px';send.disabled=true;setTimeout(()=>{addMsg(replyFor(text),'bot');send.disabled=false;input.focus()},350)}
+send.addEventListener('click',()=>submit());input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submit()}});input.addEventListener('input',()=>{input.style.height='48px';input.style.height=Math.min(input.scrollHeight,140)+'px'});document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>submit(b.dataset.prompt)));document.querySelector('#newChat').addEventListener('click',()=>{chat.innerHTML='';chat.classList.add('hidden');hero.classList.remove('hidden');cards.classList.remove('hidden');input.value='';input.focus()});
+</script>
+</body>
+</html>
